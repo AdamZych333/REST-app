@@ -1,0 +1,31 @@
+<form class="card" (ngSubmit)="submit()">
+  <div class="card-header">Form</div>
+
+  <div class="card-body">
+    <div class="form-group">
+      <label>Currency</label>
+      <input class="form-control" name="currency" [(ngModel)]="form.currency" />
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" name="name" [(ngModel)]="form.name" />
+    </div>
+
+    <div *ngIf="busy.load" class="text-center p-1">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <div *ngIf="value !== null">Value: {{ value }}</div>
+
+    <div *ngFor="let message of errorMessages" class="text-danger">
+      {{ message }}
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="buttons">
+      <button class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    Request logs
+    <button class="btn btn-sm btn-light" (click)="loadRequests()">
+      <i class="fa-solid fa-arrows-rotate" [class.rotation]="busy.load"></i>
+    </button>
+  </div>
+
+  <div class="card-body table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Currency</th>
+          <th scope="col">Value</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngIf="!busy.load && !data.length">
+          <td class="text-center" colspan="5">No data</td>
+        </tr>
+
+        <tr *ngFor="let request of data">
+          <td>{{ request.id }}</td>
+          <td>{{ request.name }}</td>
+          <td>{{ request.currency }}</td>
+          <td>{{ request.value }}</td>
+          <td>{{ request.date | date : "short" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

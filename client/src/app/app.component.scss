@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2em;
+}
+
+.page-wrapper {
+  position: relative;
+}
+
+.form-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: fit-content;
+}
